@@ -26,6 +26,10 @@ class Advertisement
     #[ORM\Column]
     private ?int $workhours = null;
 
+    #[ORM\ManyToOne(inversedBy: 'advertisements')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Company $company = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +79,18 @@ class Advertisement
     public function setWorkhours(int $workhours): static
     {
         $this->workhours = $workhours;
+
+        return $this;
+    }
+
+    public function getCompany(): ?Company
+    {
+        return $this->company;
+    }
+
+    public function setCompany(?Company $company): static
+    {
+        $this->company = $company;
 
         return $this;
     }
