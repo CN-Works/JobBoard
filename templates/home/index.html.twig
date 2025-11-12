@@ -1,22 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}JobBoard - Accueil{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    <p>This is some text I wrote. It's super long. It's so long that I won't fit on a single line.</p>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/laragon/www/JobBoardProject/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/laragon/www/JobBoardProject/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+<main class="hero w-full min-h-svh bg-base-100">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Bienvenue</h1>
+      <p class="py-6">
+        Sur notre plateforme entre salariés et recruteurs, retrouvez les meilleurs annonces et offres d'emploi sur le marché.
+        Faites de votre futur, une carrière extraordinaire dès maintenant !
+      </p>
+      <a class="btn btn-neutral btn-outline" href="{{ path("app_advertisement")}}">Découvrir les offres</a>
+    </div>
+  </div>
+</main>
 {% endblock %}

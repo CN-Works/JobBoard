@@ -23,3 +23,11 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+.env
+/migrations
+assets/scripts/baseUrl.js
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###

@@ -18,12 +18,24 @@ class Application
     private ?string $message = null;
 
     #[ORM\ManyToOne(inversedBy: 'applications')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     private ?Advertisement $advertisement = null;
 
     #[ORM\ManyToOne(inversedBy: 'applications')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?User $user = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $firstname = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $lastname = null;
+
+    #[ORM\Column(length: 180)]
+    private ?string $email = null;
+
+    #[ORM\Column(length: 20)]
+    private ?string $phone = null;
 
     public function getId(): ?int
     {
@@ -62,6 +74,54 @@ class Application
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(string $firstname): static
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): static
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): static
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): static
+    {
+        $this->phone = $phone;
 
         return $this;
     }

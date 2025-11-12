@@ -21,7 +21,7 @@ class Company
     /**
      * @var Collection<int, Advertisement>
      */
-    #[ORM\OneToMany(targetEntity: Advertisement::class, mappedBy: 'company', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Advertisement::class, mappedBy: 'company', cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $advertisements;
 
     public function __construct()

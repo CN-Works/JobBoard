@@ -29,13 +29,13 @@ class Advertisement
     private ?int $workhours = null;
 
     #[ORM\ManyToOne(inversedBy: 'advertisements')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     private ?Company $company = null;
 
     /**
      * @var Collection<int, Application>
      */
-    #[ORM\OneToMany(targetEntity: Application::class, mappedBy: 'advertisement', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Application::class, mappedBy: 'advertisement', cascade: ['remove'], orphanRemoval: true)]
     private Collection $applications;
 
     public function __construct()
