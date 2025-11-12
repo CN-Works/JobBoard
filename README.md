@@ -48,3 +48,11 @@ Le site est fourni avec un tableau de bord réservé à l’administrateur. Il p
   <li>jQuery</li>
   <li>Axios</li>
 </ul>
+
+<div align='left'><h1>Développement</h1></div>
+
+<ul>
+  <li><a href="https://github.com/CN-Works/">Victor</a> - Project Management, API, Backend & UX/UI</li>
+  <li><a href="https://github.com/HaytamL">Haytam</a> - API, Backend & Admin Dashboard</li>
+  <li><a href="https://github.com/Hector-boopy">Hector</a> - Admin Dashboard Frontend, Profile page UI</li>
+</ul>
